@@ -13,3 +13,13 @@ def character_count(text):
             unique[letters] += 1
     return unique
     
+
+def character_report(unique):
+    sorted_list = []
+    for pair, count in unique.items():
+        new_dict = {"char": pair, "num": count}
+        sorted_list.append(new_dict)
+    def sort_on(new_dict):
+        return new_dict["num"]
+    sorted_list.sort(reverse=True, key=sort_on)
+    return sorted_list    
